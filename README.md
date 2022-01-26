@@ -12,3 +12,7 @@
 
 - EditorConfig for VS Code
 - Laravel Blade Snippets
+
+## PORT の変更
+
+.env に`APP_PORT=8573`を追加
