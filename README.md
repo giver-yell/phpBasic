@@ -13,6 +13,10 @@
 - EditorConfig for VS Code
 - Laravel Blade Snippets
 
+### controller の作成
+
+- `./vendor/bin/sail artisan make:controller [ファイル名]`
+
 ## PORT の変更
 
 .env に`APP_PORT=8573`を追加
