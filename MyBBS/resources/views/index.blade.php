@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>My BBS</h1>
-    <ul>
-        <li>title</li>
-        <li>title</li>
-        <li>title</li>
-    </ul>
+    <div class="container">
+        <h1>My BBS</h1>
+        <ul>
+            <li>title</li>
+            <li>title</li>
+            <li>title</li>
+        </ul>
+    </div>
 </body>
 </html>
