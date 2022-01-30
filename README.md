@@ -1,5 +1,12 @@
 # phpBasic
 
+## local 立ち上げ
+
+- docker-compose up
+  `./vendor/bin/sail up -d`
+- URL
+  `http://localhost:8573/`
+
 ## 環境構築
 
 ### Laravel install
