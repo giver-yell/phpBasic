@@ -5,31 +5,29 @@
 // dd($posts);
 ?>
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    <title>My BBS</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>My BBS</h1>
-        <ul>
-            {{-- @foreach ($posts as $post)
-                <li>{{ $post }}</li>
-            @endforeach --}}
+<x-layout>
+    <x-slot name="title">
+        My BBS
+    </x-slot>
 
-            {{-- bladeの記法 --}}
-            {{-- 空に対応するforeach --}}
-            @forelse ($posts as $post)
-                <li>{{ $post }}</li>
-            {{-- 空の時 --}}
-            @empty
-                <li>No posts yet!</li>
-            @endforelse
+    <h1>My BBS</h1>
+    <ul>
+        {{-- @foreach ($posts as $post)
+            <li>{{ $post }}</li>
+        @endforeach --}}
 
-        </ul>
-    </div>
-</body>
-</html>
+        {{-- bladeの記法 --}}
+        {{-- 空に対応するforeach --}}
+        @forelse ($posts as $index => $post)
+            <li>
+                <a href="{{ route('posts.show', $index) }}">
+                    {{ $post }}
+                </a>
+            </li>
+        {{-- 空の時 --}}
+        @empty
+            <li>No posts yet!</li>
+        @endforelse
+
+    </ul>
+</x-layout>
