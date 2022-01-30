@@ -7,6 +7,17 @@
 - URL
   `http://localhost:8573/`
 
+## SQL 操作
+
+- SQL ログイン
+  `./vendor/bin/sail mysql mybbs`
+
+- 選択されている DB 確認
+  `SELECT DATABASE();`
+
+- テーブル確認
+  `SHOW TABLES;`
+
 ## 環境構築
 
 ### Laravel install
