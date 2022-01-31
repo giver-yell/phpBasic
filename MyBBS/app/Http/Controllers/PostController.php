@@ -3,15 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
-    private $posts = [
-        'title A',
-        'title B',
-        'title C'
-    ];
-
     /**
      * 初期画面
      *
@@ -20,20 +15,27 @@ class PostController extends Controller
      */
     public function index()
     {
+        // $posts = Post::all();
+        // $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::latest()->get();
+
         return view('index')
-            ->with(['posts' => $this->posts]);
+            ->with(['posts' => $posts]);
     }
 
 
     /**
      * 詳細画面
      *
-     * @param   $id   int   ID
+     * @param   $post
      * @return  void
      */
-    public function show($id)
+    // Implicit Binding
+    public function show(Post $post)
     {
+        // 存在しないIDで404を表示
+        // $post = Post::findOrFail($id);
         return view('posts.show')
-            ->with(['post' => $this->posts[$id]]);
+            ->with(['post' => $post]);
     }
 }
