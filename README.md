@@ -18,6 +18,11 @@
 - テーブル確認
   `SHOW TABLES;`
 
+## migragtion
+
+- ファイル作成
+  `./vendor/bin/sail artisan make:migration [ファイル名]`
+
 ## 環境構築
 
 ### Laravel install
