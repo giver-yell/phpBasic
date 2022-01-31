@@ -38,4 +38,16 @@ class PostController extends Controller
         return view('posts.show')
             ->with(['post' => $post]);
     }
+
+
+    /**
+     * 詳細画面
+     *
+     * @param   void
+     * @return  void
+     */
+    public function create()
+    {
+        return view('posts.create');
+    }
 }
