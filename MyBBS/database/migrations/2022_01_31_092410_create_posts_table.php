@@ -15,7 +15,11 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('title');
+            // nullを許容する場合
+            // $table->string('title')->nullable();
+            $table->text('body');
+            $table->timestamps(); // created_at, updated_at
         });
     }
 

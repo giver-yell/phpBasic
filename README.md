@@ -18,10 +18,16 @@
 - テーブル確認
   `SHOW TABLES;`
 
+- カラムの内容確認
+  `DESC [table名];`
+
 ## migragtion
 
 - ファイル作成
   `./vendor/bin/sail artisan make:migration [ファイル名]`
+
+- migrate 実行
+  `./vendor/bin/sail artisan migrate`
 
 ## 環境構築
 
