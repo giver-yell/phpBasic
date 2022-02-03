@@ -80,4 +80,18 @@ class PostController extends Controller
         return redirect()
             ->route('posts.index');
     }
+
+
+    /**
+     * 編集画面
+     *
+     * @param   object   $post
+     * @return  void
+     */
+    public function edit(Post $post)
+    {
+        return view('posts.edit')
+            ->with(['post' => $post]);
+    }
+
 }
