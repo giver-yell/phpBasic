@@ -8,5 +8,6 @@
     </div>
 
     <h1>{{ $post->title }}</h1>
-    <p>{{ $post->body }}</p>
+    {{-- 改行を反映 --}}
+    <p>{!! nl2br(e($post->body)) !!}</p>
 </x-layout>
