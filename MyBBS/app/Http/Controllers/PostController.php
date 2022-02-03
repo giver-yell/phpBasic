@@ -27,7 +27,7 @@ class PostController extends Controller
     /**
      * 詳細画面
      *
-     * @param   $post
+     * @param   object   $post
      * @return  void
      */
     // Implicit Binding
@@ -41,7 +41,7 @@ class PostController extends Controller
 
 
     /**
-     * 詳細画面
+     * 作成画面
      *
      * @param   void
      * @return  void
@@ -49,5 +49,31 @@ class PostController extends Controller
     public function create()
     {
         return view('posts.create');
+    }
+
+
+    /**
+     * 作成処理
+     *
+     * @param   object   $request
+     * @return  void
+     */
+    public function store(Request $request)
+    {
+        // validation
+        $request->validate([
+            'title' => 'required|min:3',
+            'body'  => 'required',
+        ]);
+
+        // 書き込み処理
+        $post = new Post();
+        $post->title = $request->title;
+        $post->body  = $request->body;
+        $post->save();
+
+        // indexにリダイレクト
+        return redirect()
+            ->route('posts.index');
     }
 }
