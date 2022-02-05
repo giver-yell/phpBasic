@@ -35,3 +35,9 @@ Route::post('/posts/store', [PostController::class, 'store'])
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])
     ->name('posts.edit')
     ->where('post', '[0-9]+');
+
+// update処理
+// 一部分のデータ変更はpatchを利用
+Route::patch('/posts/{post}/update', [PostController::class, 'update'])
+    ->name('posts.update')
+    ->where('post', '[0-9]+');
