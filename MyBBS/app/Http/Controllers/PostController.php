@@ -100,8 +100,25 @@ class PostController extends Controller
         $post->body  = $request->body;
         $post->save();
 
-        // indexにリダイレクト
+        // 詳細ページにリダイレクト
         return redirect()
             ->route('posts.show', $post);
+    }
+
+
+    /**
+     * 削除処理
+     *
+     * @param   object   $post
+     * @return  void
+     */
+    public function destroy(Post $post)
+    {
+        // 削除処理
+        $post->delete();
+
+        // indexにリダイレクト
+        return redirect()
+            ->route('posts.index');
     }
 }
