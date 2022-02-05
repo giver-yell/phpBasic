@@ -34,6 +34,11 @@
 - model ディレクトリ作成  
   `./vendor/bin/sail artisan make:model Post`
 
+## request
+
+- request ファイル作成  
+  `./vendor/bin/sail artisan make:request PostRequest`
+
 ## CLI
 
 - コンテナ接続  
