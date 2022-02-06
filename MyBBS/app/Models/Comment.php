@@ -13,4 +13,13 @@ class Comment extends Model
         'post_id',
         'body',
     ];
+
+
+    /**
+     * リレーション
+     */
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }
