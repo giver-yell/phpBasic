@@ -31,7 +31,7 @@
             </form>
         </li>
 
-        @foreach ($post->comments as $comment)
+        @foreach ($post->comments()->latest()->get() as $comment)
             <li>
                 {{ $comment->body }}
             </li>
