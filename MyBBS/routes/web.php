@@ -28,7 +28,6 @@ Route::get('/posts/{post}', [PostController::class, 'show'])
 // create
 Route::get('/posts/create', [PostController::class, 'create'])
     ->name('posts.create');
-
 // store
 Route::post('/posts/store', [PostController::class, 'store'])
     ->name('posts.store');
@@ -37,7 +36,6 @@ Route::post('/posts/store', [PostController::class, 'store'])
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])
     ->name('posts.edit')
     ->where('post', '[0-9]+');
-
 // update処理
 // 一部分のデータ変更はpatchを利用
 Route::patch('/posts/{post}/update', [PostController::class, 'update'])
