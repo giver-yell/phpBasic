@@ -31,6 +31,9 @@
 
 ## model
 
+- model と migration と controller 作成  
+  `./vendor/bin/sail artisan make:model [model名] -mc`
+
 - model ディレクトリ作成  
   `./vendor/bin/sail artisan make:model Post`
 
@@ -91,7 +94,7 @@
 
 ※ .editorconfig ファイルを適用するため
 
-- EditorConfig for VS Code  
+- EditorConfig for VS Code
 - Laravel Blade Snippets
 
 ### controller の作成
