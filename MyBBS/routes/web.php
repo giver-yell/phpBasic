@@ -47,7 +47,12 @@ Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])
     ->name('posts.destroy')
     ->where('post', '[0-9]+');
 
-// コメント作成処理
+// コメント
+// 作成処理
 Route::post('/posts/{post}/comments', [CommentController::class, 'store'])
     ->name('comments.store')
     ->where('post', '[0-9]+');
+// delete処理
+Route::delete('/comments/{comment}/destroy', [CommentController::class, 'destroy'])
+    ->name('comments.destroy')
+    ->where('comment', '[0-9]+');
